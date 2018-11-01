@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+
+sourceSets {
+	main {
+		java.srcDir "$projectDir/src"
+	}
+}
+
+repositories {
+	flatDir{
+		dirs '$projectDir/libs'
+	}
+	maven{
+		url 'http://maven.aliyun.com/nexus/content/groups/public'
+	}
+	jcenter{
+		url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
+	}
+	//jcenter()
+	//mavenCentral()
+}
+
+dependencies {
+	compile 'com.alibaba:fastjson:1.1.25'
+	compile 'org.bouncycastle:bcprov-jdk15on:1.60'
+	compile 'org.springframework:spring-aop:4.1.7.RELEASE'
+	compile 'org.springframework:spring-beans:4.1.7.RELEASE'
+	compile 'org.springframework:spring-context:4.1.7.RELEASE'
+	compile 'org.springframework:spring-context-support:4.1.7.RELEASE'
+	compile 'org.springframework:spring-core:4.1.7.RELEASE'
+	compile 'org.springframework:spring-jdbc:4.1.7.RELEASE'
+	compile 'org.springframework:spring-orm:4.1.7.RELEASE'
+	compile 'org.springframework:spring-tx:4.1.7.RELEASE'
+	compile 'org.springframework:spring-web:4.1.7.RELEASE'
+	compile 'org.springframework:spring-webmvc:4.1.7.RELEASE'
+	compile 'org.springframework:spring-websocket:4.1.7.RELEASE'
+	compile 'mysql:mysql-connector-java:5.1.41'
+	compile 'com.alibaba:druid:1.0.28'
+	compile 'junit:junit:4.12'
+	compile 'cglib:cglib:3.2.5'
+}
